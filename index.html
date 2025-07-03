@@ -4,5 +4,348 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ramani_Ujenzi Studio</title>
-  ...
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: #000;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    nav {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      margin-bottom: 1.5rem;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+      transition: border 0.3s ease, background 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #555;
+      outline: none;
+      background-color: #fff;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #444;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 1rem;
+      padding: 12px;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      animation: fadeIn 0.5s ease-in-out;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        padding: 1.5rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #111;
+      color: #e4e4e4;
+    }
+
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .dark-mode nav {
+      background-color: #1a1a1a;
+      box-shadow: none;
+    }
+
+    .dark-mode nav a {
+      color: #eee;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #e4e4e4;
+    }
+
+    .dark-mode .contact-form {
+      background-color: #1e1e1e;
+      color: #e4e4e4;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    .dark-mode input:focus,
+    .dark-mode textarea:focus {
+      background-color: #1e1e1e;
+      border-color: #666;
+    }
+
+    .dark-mode .contact-form button {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .dark-mode .contact-form button:hover {
+      background-color: #ddd;
+    }
+
+    .dark-mode .success-message {
+      background-color: #2e7d32;
+      color: #e4e4e4;
+      border-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ramani_Ujenzi Studio</h1>
+  <p>Innovative Spaces | Timeless Design</p>
+</header>
+
+<div style="text-align:right; padding:1rem;">
+  <button id="themeToggle" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙 Dark Mode</button>
+</div>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Ramani_Ujenzi Studio is a creative architectural firm focused on designing functional, beautiful, and sustainable spaces. Our team merges vision with detail to create unique environments that reflect our clients' values.
+  </p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Residential Design</h3>
+      <p>Modern, elegant homes tailored to your lifestyle and location.</p>
+    </div>
+    <div class="card">
+      <h3>Commercial Spaces</h3>
+      <p>Innovative offices, retail, and hospitality architecture with purpose.</p>
+    </div>
+    <div class="card">
+      <h3>Interior Architecture</h3>
+      <p>Blending spatial planning with aesthetic sensibility for refined interiors.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?modern-house" alt="Modern House">
+      <h4>Lakeview Residence</h4>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?architecture,building" alt="Office Tower">
+      <h4>Urban Office Tower</h4>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?interior,design" alt="Interior">
+      <h4>Loft Interior</h4>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm" action="https://formspree.io/f/xkgbeqyg" method="POST" class="contact-form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" placeholder="+255 712 345 678" pattern="^\+?\d{7,15}$" required>
+
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+    <div id="formSuccess" class="success-message">Thank you! Your message has been sent.</div>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 ArchDesign Studio. All rights reserved.
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        form.reset();
+        setTimeout(() => successMsg.style.display = 'none', 3000);
+      } else {
+        alert("Oops! There was a problem submitting your form");
+      }
+    });
+  });
+
+  const toggleBtn = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️ Light Mode';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+
+</body>
 </html>
