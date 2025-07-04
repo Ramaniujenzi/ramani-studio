@@ -163,81 +163,6 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .contact-form {
-        padding: 1.5rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 0.95rem;
-      }
-    }
-
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #111;
-      color: #e4e4e4;
-    }
-
-    .dark-mode header,
-    .dark-mode footer {
-      background-color: #222;
-      color: #fff;
-    }
-
-    .dark-mode nav {
-      background-color: #1a1a1a;
-      box-shadow: none;
-    }
-
-    .dark-mode nav a {
-      color: #eee;
-    }
-
-    .dark-mode .card {
-      background-color: #1e1e1e;
-      color: #e4e4e4;
-    }
-
-    .dark-mode .contact-form {
-      background-color: #1e1e1e;
-      color: #e4e4e4;
-    }
-
-    .dark-mode input,
-    .dark-mode textarea {
-      background-color: #2a2a2a;
-      color: #fff;
-      border: 1px solid #444;
-    }
-
-    .dark-mode input:focus,
-    .dark-mode textarea:focus {
-      background-color: #1e1e1e;
-      border-color: #666;
-    }
-
-    .dark-mode .contact-form button {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .dark-mode .contact-form button:hover {
-      background-color: #ddd;
-    }
-
-    .dark-mode .success-message {
-      background-color: #2e7d32;
-      color: #e4e4e4;
-      border-color: #1b5e20;
-    }
-
-    /* Floating WhatsApp Button */
     #whatsappButton {
       position: fixed;
       bottom: 20px;
@@ -268,166 +193,122 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>Ramani_Ujenzi Studio</h1>
+    <p>Innovative Spaces | Timeless Design</p>
+  </header>
 
-<header>
-  <h1>Ramani_Ujenzi Studio</h1>
-  <p>Innovative Spaces | Timeless Design</p>
-</header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div style="text-align:right; padding:1rem;">
-  <button id="themeToggle" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙 Dark Mode</button>
-</div>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    Ramani_Ujenzi Studio is a creative architectural firm focused on designing functional, beautiful, and sustainable spaces. Our team merges vision with detail to create unique environments that reflect our clients' values.
-  </p>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Residential Design</h3>
-      <p>Modern, elegant homes tailored to your lifestyle and location.</p>
-    </div>
-    <div class="card">
-      <h3>Commercial Spaces</h3>
-      <p>Innovative offices, retail, and hospitality architecture with purpose.</p>
-    </div>
-    <div class="card">
-      <h3>Interior Architecture</h3>
-      <p>Blending spatial planning with aesthetic sensibility for refined interiors.</p>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Featured Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?modern-house" alt="Modern House" loading="lazy" />
-      <h4>Lakeview Residence</h4>
-      <p>A sleek lakefront home with clean lines and glass walls.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?architecture,building" alt="Office Tower" loading="lazy" />
-      <h4>Urban Office Tower</h4>
-      <p>Modern commercial tower designed for energy efficiency and urban density.</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?interior,design" alt="Interior" loading="lazy" />
-      <h4>Loft Interior</h4>
-      <p>Open-space loft with modern lighting and industrial materials.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <form id="contactForm" action="https://formspree.io/f/xkgbeqyg" method="POST" class="contact-form">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" required />
-
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required />
-
-    <label for="phone">Phone Number</label>
-    <input
-      type="tel"
-      name="phone"
-      id="phone"
-      placeholder="+255 712 345 678"
-      pattern="^\+?\d{7,15}$"
-      required
-    />
-
-    <label for="message">Message</label>
-    <textarea name="message" id="message" rows="6" required></textarea>
-
-    <button type="submit">Send Message</button>
-    <div id="formSuccess" class="success-message">Thank you! Your message has been sent.</div>
-  </form>
-
-  <div style="margin-top: 2rem; text-align: center;">
-    <p><strong>Email:</strong> <a href="mailto:ujenziramani@gmail.com">ujenziramani@gmail.com</a></p>
+  <section id="about">
+    <h2>About Us</h2>
     <p>
-      <strong>WhatsApp:</strong>
-      <a href="https://wa.me/255762188230" target="_blank">+255 762 188 230</a>
+      Ramani_Ujenzi Studio is a creative architectural firm focused on designing functional, beautiful, and sustainable spaces.
     </p>
-    <p><strong>Location:</strong> Arusha, Tanzania</p>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div style="margin-bottom: 1rem;">
-    <a href="https://www.instagram.com/ujenziramani" target="_blank">📷 Instagram</a>
-  </div>
-  &copy; 2025 ArchDesign Studio. All rights reserved.
-</footer>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Residential Design</h3>
+        <p>Modern, elegant homes tailored to your lifestyle and location.</p>
+      </div>
+      <div class="card">
+        <h3>Commercial Spaces</h3>
+        <p>Innovative offices, retail, and hospitality architecture with purpose.</p>
+      </div>
+      <div class="card">
+        <h3>Interior Architecture</h3>
+        <p>Blending spatial planning with aesthetic sensibility for refined interiors.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Floating WhatsApp Button -->
-<a
-  href="https://wa.me/255762188230"
-  target="_blank"
-  id="whatsappButton"
-  aria-label="Chat on WhatsApp"
-  title="Chat with us on WhatsApp"
->
-  <!-- WhatsApp SVG icon -->
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path
-      d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 .003 5.372 0 12a11.915 11.915 0 001.646 6.004L0 24l6.155-1.62A11.94 11.94 0 0012 24c6.627 0 12-5.372 12-12 0-3.19-1.25-6.188-3.48-8.52zM12 21.5a9.44 9.44 0 01-4.797-1.338l-.344-.206-3.655.962.974-3.567-.22-.355A9.44 9.44 0 012.5 12c0-5.246 4.254-9.5 9.5-9.5S21.5 6.754 21.5 12 17.246 21.5 12 21.5zm5.423-7.242c-.295-.148-1.742-.86-2.013-.959-.27-.098-.466-.147-.662.147-.197.295-.76.958-.932 1.155-.17.196-.345.22-.64.074-.295-.147-1.245-.46-2.37-1.457-.875-.778-1.466-1.737-1.637-2.032-.17-.295-.018-.454.13-.601.134-.133.296-.347.444-.52.148-.174.197-.296.295-.494.098-.196.05-.37-.025-.518-.074-.147-.662-1.6-.906-2.19-.238-.575-.48-.497-.662-.507l-.565-.01c-.197 0-.518.074-.79.37s-1.04 1.02-1.04 2.49 1.065 2.89 1.213 3.09c.148.197 2.09 3.188 5.068 4.47.708.305 1.26.487 1.69.623.71.227 1.356.195 1.87.118.57-.085 1.742-.71 1.988-1.4.247-.69.247-1.282.172-1.4-.074-.117-.27-.196-.565-.344z"
-    />
-  </svg>
-</a>
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?modern-house" alt="Modern House">
+        <h4>Lakeview Residence</h4>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?architecture,building" alt="Office Tower">
+        <h4>Urban Office Tower</h4>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?interior,design" alt="Interior">
+        <h4>Loft Interior</h4>
+      </div>
+    </div>
+  </section>
 
-<script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('formSuccess');
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="https://formspree.io/f/xkgbeqyg" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
 
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' },
-    }).then(response => {
-      if (response.ok) {
-        successMsg.style.display = 'block';
-        form.reset();
-        setTimeout(() => (successMsg.style.display = 'none'), 3000);
-      } else {
-        alert('Oops! There was a problem submitting your form');
-      }
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" placeholder="+255 712 345 678" pattern="^\+?\d{7,15}$" required>
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <div id="formSuccess" class="success-message">Thank you! Your message has been sent.</div>
+    </form>
+
+    <div style="margin-top: 2rem; text-align: center;">
+      <p><strong>Email:</strong> <a href="mailto:ujenziramani@gmail.com">ujenziramani@gmail.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/255762188230" target="_blank">+255 762 188 230</a></p>
+      <p><strong>Location:</strong> Arusha, Tanzania</p>
+    </div>
+  </section>
+
+  <footer>
+    <div style="margin-bottom: 1rem;">
+      <a href="https://www.instagram.com/ramani.ujenzi" target="_blank">📷 Instagram</a>
+    </div>
+    &copy; 2025 ArchDesign Studio. All rights reserved.
+  </footer>
+
+  <a href="https://wa.me/255762188230" target="_blank" id="whatsappButton" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 .003 5.372 0 12a11.915 11.915 0 001.646 6.004L0 24l6.155-1.62A11.94 11.94 0 0012 24c6.627 0 12-5.372 12-12 0-3.19-1.25-6.188-3.48-8.52zM12 21.5a9.44 9.44 0 01-4.797-1.338l-.344-.206-3.655.962.974-3.567-.22-.355A9.44 9.44 0 012.5 12c0-5.246 4.254-9.5 9.5-9.5S21.5 6.754 21.5 12 17.246 21.5 12 21.5zm5.423-7.242c-.295-.148-1.742-.86-2.013-.959-.27-.098-.466-.147-.662.147-.197.295-.76.958-.932 1.155-.17.196-.345.22-.64.074-.295-.147-1.245-.46-2.37-1.457-.875-.778-1.466-1.737-1.637-2.032-.17-.295-.018-.454.13-.601.134-.133.296-.347.444-.52.148-.174.197-.296.295-.494.098-.196.05-.37-.025-.518-.074-.147-.662-1.6-.906-2.19-.238-.575-.48-.497-.662-.507l-.565-.01c-.197 0-.518.074-.79.37s-1.04 1.02-1.04 2.49 1.065 2.89 1.213 3.09c.148.197 2.09 3.188 5.068 4.47.708.305 1.26.487 1.69.623.71.227 1.356.195 1.87.118.57-.085 1.742-.71 1.988-1.4.247-.69.247-1.282.172-1.4-.074-.117-.27-.196-.565-.344z"/>
+    </svg>
+  </a>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' },
+      }).then(response => {
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+          setTimeout(() => (successMsg.style.display = 'none'), 3000);
+        } else {
+          alert('Oops! There was a problem submitting your form');
+        }
+      });
     });
-  });
-
-  const toggleBtn = document.getElementById('themeToggle');
-  const currentTheme = localStorage.getItem('theme');
-
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    toggleBtn.textContent = '☀️ Light Mode';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>
-
+  </script>
 </body>
 </html>
