@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodMorph — Architectural Moodboard Studio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+  <!-- 🌇 Splash Banner -->
+  <section class="readme-banner">
+    <img src="assets/splash-image.jpg" alt="MoodMorph Splash Banner" />
+  </section>
+
+  <main class="readme-content">
+    <h1>🎨 MoodMorph – Architectural Moodboard Studio</h1>
+    <p><strong>MoodMorph</strong> is a responsive, browser-based moodboard app crafted for visual thinkers who sketch with style and structure. Built by FUE, it blends expressive brushes, architectural textures, cinematic palettes, and real-time interaction.</p>
+    <blockquote><em>Where linework meets light. Crafted with chaos and clarity.</em></blockquote>
+
+    <h2>💡 Features</h2>
+    <ul>
+      <li>🖌️ <strong>Brush Engine:</strong> Scribble, Hatch, Glow, Freehand + live previews</li>
+      <li>🧱 <strong>Draggable Assets:</strong> Arrange textures, tags, and palettes freely</li>
+      <li>🌗 <strong>Light/Dark Mode:</strong> Toggle visual atmosphere</li>
+      <li>💾 <strong>Export Tools:</strong> PNG, SVG, and full moodboard capture</li>
+      <li>⏪ <strong>Undo/Redo:</strong> Stroke history control</li>
+      <li>🔖 <strong>Style Tags & Notes:</strong> Label and log your inspiration</li>
+    </ul>
+
+    <h2>🎨 Brush Demo</h2>
+    <canvas id="brushDemo" width="300" height="150"></canvas>
+    <p>Select a brush and preview stroke style:</p>
+    <select id="demoBrush">
+      <option value="normal">Freehand</option>
+      <option value="scribble">Scribble</option>
+      <option value="hatch">Hatch</option>
+      <option value="glow">Glow</option>
+    </select>
+
+    <h2>🧪 Tech Stack</h2>
+    <table>
+      <thead>
+        <tr><th>Language</th><th>Libraries</th><th>Tooling</th><th>Export</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML5, CSS Grid</td>
+          <td>Canvas API, GSAP, Konva.js</td>
+          <td>LocalStorage, SVG Blob</td>
+          <td>html2canvas</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🖼️ Moodboard Gallery</h2>
+    <div class="carousel">
+      <div class="slide">
+        <img src="assets/brutalist.png" alt="Brutalist Sunset" />
+        <p>Brutalist Sunset</p>
+      </div>
+      <div class="slide">
+        <img src="assets/classical.png" alt="Da Vinci Parchment" />
+        <p>Da Vinci Parchment</p>
+      </div>
+      <div class="slide">
+        <img src="assets/urban.png" alt="Urban Concrete" />
+        <p>Urban Concrete</p>
+      </div>
+    </div>
+
+    <h2>🚀 Try It Live</h2>
+    <p><a href="https://your-deployed-link.com" class="cta-button">🎨 Launch MoodMorph</a></p>
+
+    <h2>📜 About the Creator</h2>
+    <p>
+      Hi, I’m <strong>FUE</strong> — I build expressive tools that fuse art, architecture, and code. MoodMorph is part of my ongoing exploration into generative UI, sketch-powered design, and concept visualization.
+    </p>
+    <p>
+      📂 Portfolio: <a href="https://yourportfolio.com">yourportfolio.com</a><br />
+      🐙 GitHub: <a href="https://github.com/FUE">github.com/FUE</a><br />
+      📮 Contact: <a href="mailto:your@email.com">your@email.com</a>
+    </p>
+
+    <h2>🪪 License</h2>
+    <p>MIT © FUE — Free to remix, learn, and inspire.</p>
+  </main>
+
+  <script>
+    const demoCanvas = document.getElementById("brushDemo");
+    const demoCtx = demoCanvas.getContext("2d");
+
+    function drawBrushSample(mode) {
+      demoCtx.clearRect(0, 0, demoCanvas.width, demoCanvas.height);
+      demoCtx.strokeStyle = "#444";
+      demoCtx.lineWidth = 3;
+
+      switch (mode) {
+        case "normal":
+          demoCtx.beginPath();
+          demoCtx.moveTo(30, 75);
+          demoCtx.lineTo(270, 75);
+          demoCtx.stroke();
+          break;
+        case "scribble":
+          demoCtx.beginPath();
+          for (let i = 0; i < 4; i++) {
+            let x = 50 + Math.random() * 200;
+            let y = 50 + Math.random() * 50;
+            demoCtx.lineTo(x, y);
+          }
+          demoCtx.stroke();
+          break;
+        case "hatch":
+          for (let a = 0; a < 4; a++) {
+            demoCtx.beginPath();
+            demoCtx.moveTo(150, 75);
+            demoCtx.lineTo(
+              150 + 20 * Math.cos((Math.PI / 4) * a),
+              75 + 20 * Math.sin((Math.PI / 4) * a)
+            );
+            demoCtx.stroke();
+          }
+          break;
+        case "glow":
+          demoCtx.shadowColor = "#999";
+          demoCtx.shadowBlur = 12;
+          demoCtx.globalAlpha = 0.4;
+          demoCtx.beginPath();
+          demoCtx.moveTo(30, 75);
+          demoCtx.lineTo(270, 75);
+          demoCtx.stroke();
+          demoCtx.shadowBlur = 0;
+          demoCtx.globalAlpha = 1;
+          break;
+      }
+    }
+
+    document.getElementById("demoBrush").addEventListener("change", (e) => {
+      drawBrushSample(e.target.value);
+    });
+
+    drawBrushSample("normal");
+  </script>
+</body>
+</html>
